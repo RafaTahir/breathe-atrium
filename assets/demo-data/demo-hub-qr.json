@@ -1,0 +1,5 @@
+{
+  "targetUrl": "http://192.168.0.17:5173/demo-hub",
+  "generatedAt": "2026-05-14T17:03:56.935Z",
+  "note": "Regenerate with `npm run qr:demo-hub -- https://your-deployed-url/demo-hub` before final deployment."
+}

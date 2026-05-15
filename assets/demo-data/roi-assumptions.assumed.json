@@ -1,0 +1,7 @@
+{
+  "label": "Assumed ROI inputs for demo only.",
+  "baselineCoolingKwhPerMonth": 18000,
+  "targetCoolingBurdenReductionPct": 8,
+  "tariffRmPerKwh": 0.42,
+  "note": "Replace with measured baseline and tariff data before buyer-facing use."
+}

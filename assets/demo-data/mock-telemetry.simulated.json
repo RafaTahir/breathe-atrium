@@ -1,0 +1,10 @@
+{
+  "label": "Simulated demo telemetry. Not measured pilot data.",
+  "series": [
+    { "time": "09:00", "baselineZoneTempC": 31.2, "breatheZoneTempC": 29.8, "roofLayerTempC": 34.8, "airflowIndex": 42 },
+    { "time": "10:00", "baselineZoneTempC": 32.8, "breatheZoneTempC": 30.2, "roofLayerTempC": 36.4, "airflowIndex": 58 },
+    { "time": "11:00", "baselineZoneTempC": 34.1, "breatheZoneTempC": 30.7, "roofLayerTempC": 37.8, "airflowIndex": 68 },
+    { "time": "12:00", "baselineZoneTempC": 35.3, "breatheZoneTempC": 30.9, "roofLayerTempC": 37.9, "airflowIndex": 72 },
+    { "time": "13:00", "baselineZoneTempC": 36.1, "breatheZoneTempC": 31.4, "roofLayerTempC": 38.7, "airflowIndex": 76 }
+  ]
+}

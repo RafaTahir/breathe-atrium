@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="night" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#05030b"/>
+      <stop offset="0.42" stop-color="#13091f"/>
+      <stop offset="0.76" stop-color="#07121a"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <radialGradient id="limeGlow" cx="72%" cy="22%" r="46%">
+      <stop offset="0" stop-color="#d7ff3f" stop-opacity="0.38"/>
+      <stop offset="0.32" stop-color="#20f0d0" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#05030b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="magentaGlow" cx="8%" cy="78%" r="52%">
+      <stop offset="0" stop-color="#ff4fd8" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#05030b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <linearGradient id="rib" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.48" stop-color="#d8e1df" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#20f0d0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0.52" stop-color="#20f0d0" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="2400" height="1400" fill="url(#night)"/>
+  <rect width="2400" height="1400" fill="url(#limeGlow)"/>
+  <rect width="2400" height="1400" fill="url(#magentaGlow)"/>
+
+  <g opacity="0.46" filter="url(#softBlur)">
+    <path d="M-180 1090 C340 820 790 900 1260 710 C1650 550 2010 480 2620 150" fill="none" stroke="#20f0d0" stroke-width="28" stroke-opacity="0.16"/>
+    <path d="M-260 1220 C440 880 920 950 1390 760 C1780 604 2100 510 2660 250" fill="none" stroke="#d7ff3f" stroke-width="18" stroke-opacity="0.12"/>
+  </g>
+
+  <g opacity="0.72">
+    <path d="M-120 1060 C310 830 670 775 1040 675 C1510 548 1840 336 2460 92" fill="none" stroke="url(#rib)" stroke-width="2"/>
+    <path d="M-120 1195 C300 965 720 895 1105 765 C1580 603 1910 450 2480 205" fill="none" stroke="url(#rib)" stroke-width="2"/>
+    <path d="M-120 1320 C355 1120 790 1005 1235 840 C1640 690 2000 560 2520 380" fill="none" stroke="url(#rib)" stroke-width="2"/>
+    <path d="M120 0 C500 375 690 570 1080 705 C1460 836 1830 882 2320 1210" fill="none" stroke="#ffffff" stroke-opacity="0.055" stroke-width="2"/>
+    <path d="M570 -80 C810 315 960 535 1310 690 C1620 828 1900 935 2300 1320" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(230 150)" opacity="0.3">
+    <path d="M0 780 C320 650 690 662 1015 530 C1390 380 1605 205 1910 0 L2060 760 C1640 640 1350 700 1010 820 C640 950 300 1010 0 1090Z" fill="url(#floor)" stroke="#ffffff" stroke-opacity="0.09" stroke-width="2"/>
+    <path d="M180 800 C520 705 760 702 1110 575 C1420 462 1605 302 1888 120" fill="none" stroke="#ffffff" stroke-opacity="0.12"/>
+    <path d="M260 930 C610 820 910 790 1250 660 C1530 552 1725 410 1980 255" fill="none" stroke="#20f0d0" stroke-opacity="0.1"/>
+    <path d="M430 1015 C780 900 1020 875 1370 742 C1645 638 1838 505 2070 368" fill="none" stroke="#d7ff3f" stroke-opacity="0.075"/>
+  </g>
+
+  <g opacity="0.13">
+    <path d="M0 250 H2400 M0 450 H2400 M0 650 H2400 M0 850 H2400 M0 1050 H2400" stroke="#ffffff"/>
+    <path d="M300 0 V1400 M650 0 V1400 M1000 0 V1400 M1350 0 V1400 M1700 0 V1400 M2050 0 V1400" stroke="#ffffff"/>
+  </g>
+</svg>

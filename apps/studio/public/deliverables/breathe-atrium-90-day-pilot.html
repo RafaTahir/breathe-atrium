@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>90-Day BreatheAtrium Pilot</title>
+  <style>
+    :root {
+      --ink: #031418;
+      --teal: #062f35;
+      --teal-2: #0a4846;
+      --mint: #9dd9c8;
+      --gold: #f2b84b;
+      --solar: #f7d27a;
+      --paper: #f8f3e7;
+      --cloud: #d9e7e1;
+      --line: rgba(248, 243, 231, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(242, 184, 75, 0.2), transparent 26%),
+        linear-gradient(135deg, var(--ink), #05272d 48%, #0d5752);
+      color: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 18px 16px 0;
+    }
+
+    .toolbar button {
+      min-height: 42px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 850;
+      padding: 0 18px;
+      letter-spacing: 0.03em;
+    }
+
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      width: 210mm;
+      height: 297mm;
+      margin: 18px auto 32px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 34px 34px,
+        linear-gradient(145deg, rgba(6, 47, 53, 0.98), rgba(10, 72, 70, 0.96));
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .sheet + .sheet {
+      margin-top: 28px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      padding: 34px 36px 26px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 80% 26%, rgba(242, 184, 75, 0.24), transparent 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    }
+
+    .mini-hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: end;
+      padding: 30px 36px 24px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 82% 20%, rgba(242, 184, 75, 0.2), transparent 22%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .eyebrow,
+    .label,
+    .tag {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 10px 0 0;
+      font-size: 54px;
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 690px;
+      margin: 0;
+      color: var(--cloud);
+      font-size: 16px;
+    }
+
+    .content {
+      display: grid;
+      gap: 14px;
+      padding: 22px 26px 28px;
+      flex: 1;
+      align-content: start;
+    }
+
+    .cover-content {
+      align-content: stretch;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    .decision-content {
+      align-content: stretch;
+      grid-template-rows: 1fr 1fr 1.22fr;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.09);
+      padding: 16px;
+    }
+
+    .card h2,
+    .timeline h2,
+    .kpi-card h2 {
+      margin: 5px 0 8px;
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--cloud);
+      font-size: 13px;
+    }
+
+    .intervention {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      border: 1px solid rgba(157, 217, 200, 0.28);
+      border-radius: 999px;
+      color: var(--paper);
+      background: rgba(3, 20, 24, 0.34);
+      font-size: 11px;
+      font-weight: 750;
+      padding: 7px 9px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .timeline {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.09);
+      padding: 16px;
+    }
+
+    .cover-content .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .cover-content .timeline-grid {
+      flex: 1;
+    }
+
+    .phase {
+      min-height: 154px;
+      border: 1px solid rgba(248, 243, 231, 0.16);
+      border-radius: 8px;
+      background: rgba(3, 20, 24, 0.28);
+      padding: 12px;
+    }
+
+    .phase strong {
+      display: block;
+      margin: 7px 0;
+      color: var(--paper);
+      font-size: 14px;
+      line-height: 1.18;
+    }
+
+    .phase p {
+      margin: 0;
+      color: var(--cloud);
+      font-size: 11.5px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .approval-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .decision-content .card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .decision-content ul {
+      flex: 1;
+    }
+
+    ul {
+      display: grid;
+      gap: 7px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--cloud);
+      font-size: 12.5px;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .ask {
+      border-color: rgba(242, 184, 75, 0.45);
+      background: linear-gradient(135deg, rgba(242, 184, 75, 0.18), rgba(255, 255, 255, 0.08));
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .disclaimer {
+      border-color: rgba(242, 184, 75, 0.42);
+    }
+
+    .signature {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 210px;
+    }
+
+    .signature-line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .line {
+      height: 42px;
+      border-bottom: 1px solid rgba(248, 243, 231, 0.45);
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .sheet:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .sheet + .sheet {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button type="button" onclick="window.print()">Print or Save PDF</button>
+  </div>
+
+  <main class="sheet">
+    <section class="hero">
+      <div class="brand">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="brand-mark">BA</div>
+          <div>
+            <div class="eyebrow">BreatheAtrium</div>
+            <div style="font-weight:900;font-size:20px">Pilot Proposal</div>
+          </div>
+        </div>
+        <div class="tag">Generated 15 May 2026</div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Executive pilot proposal</div>
+        <h1>90-Day BreatheAtrium Pilot</h1>
+      </div>
+      <p class="subtitle">A concise pilot path for facility managers and building owners with overheated atriums, using solar-assisted natural ventilation as a mixed-mode comfort and cooling-burden retrofit.</p>
+    </section>
+
+    <section class="content cover-content">
+      <div class="top-grid">
+        <article class="card">
+          <div class="label">Target customer</div>
+          <h2>Facility teams responsible for hot atriums</h2>
+          <p>Facility managers and building owners operating malls, universities, government offices, hotels, office towers, or transport hubs with glass atriums that overheat during occupied periods.</p>
+        </article>
+
+        <article class="card">
+          <div class="label">Problem</div>
+          <h2>Heat build-up becomes an operating burden</h2>
+          <p>Hot upper layers, occupant discomfort, weak air movement, and higher cooling burden can make atriums expensive to operate and difficult to keep comfortable.</p>
+        </article>
+      </div>
+
+      <article class="card">
+        <div class="label">Proposed intervention</div>
+        <h2>Passive-first retrofit, measured before claims</h2>
+        <p>Audit, sensor mapping, solar-assisted ventilation design, low-level intake, high-level exhaust, optional water-wall or evaporative assist, and BMS integration for mixed-mode operation.</p>
+        <div class="intervention">
+          <span class="pill">Audit</span>
+          <span class="pill">Sensor mapping</span>
+          <span class="pill">Solar-assisted design</span>
+          <span class="pill">Low-level intake</span>
+          <span class="pill">High-level exhaust</span>
+          <span class="pill">Optional water wall</span>
+          <span class="pill">BMS integration</span>
+          <span class="pill">Dashboard</span>
+          <span class="pill">Verification report</span>
+        </div>
+      </article>
+
+      <section class="timeline">
+        <div class="label">Pilot scope</div>
+        <h2>Twelve weeks from baseline to scale decision</h2>
+        <div class="timeline-grid">
+          <article class="phase">
+            <div class="tag">Week 1-2</div>
+            <strong>Audit and baseline measurement</strong>
+            <p>Site walk-through, heat-risk mapping, sensor placement plan, and pre-install temperature, humidity, CO2, airflow, and cooling-energy proxy baseline.</p>
+          </article>
+          <article class="phase">
+            <div class="tag">Week 3-6</div>
+            <strong>Prototype or retrofit installation</strong>
+            <p>Low-level intake path, high-level exhaust path, solar-assisted ventilation design, optional water-wall assessment, and BMS coordination.</p>
+          </article>
+          <article class="phase">
+            <div class="tag">Week 7-10</div>
+            <strong>Monitored operation</strong>
+            <p>Operate the passive-first mode, watch comfort indicators, tune control assumptions, and keep a facilities log of operational observations.</p>
+          </article>
+          <article class="phase">
+            <div class="tag">Week 11-12</div>
+            <strong>Verification and scale decision</strong>
+            <p>Compare baseline and operating periods, summarize findings, document constraints, and decide whether to scale, redesign, or stop.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <main class="sheet">
+    <section class="mini-hero">
+      <div>
+        <div class="eyebrow">Evidence, commercial path, approval</div>
+        <h1 style="font-size:42px;max-width:620px">Pilot decision pack</h1>
+      </div>
+      <div class="brand-mark">BA</div>
+    </section>
+
+    <section class="content decision-content">
+      <div class="evidence-grid">
+        <article class="card kpi-card">
+          <div class="label">KPIs</div>
+          <h2>What will be measured</h2>
+          <ul>
+            <li>Temperature stratification reduction</li>
+            <li>Occupied-zone comfort improvement</li>
+            <li>Airflow improvement</li>
+            <li>CO2 / ventilation trend</li>
+            <li>Cooling energy proxy</li>
+            <li>User feedback</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="label">Commercial model</div>
+          <h2>Clear buyer path</h2>
+          <ul>
+            <li>Paid feasibility audit</li>
+            <li>Pilot fee</li>
+            <li>Full retrofit package</li>
+            <li>Monitoring subscription</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="approval-grid">
+        <article class="card ask">
+          <div class="label">The ask</div>
+          <h2>Access and approval</h2>
+          <ul>
+            <li>Pilot atrium access</li>
+            <li>Researcher support</li>
+            <li>Facility manager contact</li>
+            <li>Permission to install sensors</li>
+          </ul>
+        </article>
+
+        <article class="card disclaimer">
+          <div class="label">Disclaimer</div>
+          <h2>Measured evidence before scale</h2>
+          <p>Results depend on site conditions and require measurement. Savings and comfort improvements should only be claimed after site audit, sensor measurement, and post-install verification.</p>
+        </article>
+      </div>
+
+      <div class="footer">
+        <article class="card">
+          <div class="label">Scale decision</div>
+          <h2>Approve, redesign, or stop</h2>
+          <p>The pilot closes with a concise verification report: what improved, what did not, what site constraints matter, and whether the atrium is ready for a full retrofit package.</p>
+        </article>
+        <article class="card signature">
+          <div>
+            <div class="label">Facility approval</div>
+            <h2>Decision gate</h2>
+          </div>
+          <div class="signature-line">
+            <div>
+              <div class="line"></div>
+              <div class="tag">Facility manager</div>
+            </div>
+            <div>
+              <div class="line"></div>
+              <div class="tag">Pilot sponsor</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+flowchart LR
+  subgraph Field["Atrium field layer"]
+    T["Temperature"]
+    H["Humidity"]
+    A["Airflow"]
+    C["CO2"]
+  end
+
+  subgraph Gateway["Edge gateway"]
+    ESP["ESP32 / sensor gateway"]
+    Validate["Validate payload"]
+    Label["Label data status: simulated / CSV / serial / measured"]
+  end
+
+  subgraph App["BreatheAtrium Studio"]
+    Stream["Live sensor stream"]
+    Chart["Dashboard charts and cards"]
+    ROI["ROI assumptions"]
+    Report["Pilot report"]
+  end
+
+  subgraph Decision["Commercial decision"]
+    Evidence["Verification evidence"]
+    Buyer["Building owner / facility manager"]
+    Action["Retrofit, redesign, or stop"]
+  end
+
+  T --> ESP
+  H --> ESP
+  A --> ESP
+  C --> ESP
+  ESP --> Validate
+  Validate --> Label
+  Label --> Stream
+  Stream --> Chart
+  Stream --> Report
+  ROI --> Report
+  Chart --> Evidence
+  Report --> Evidence
+  Evidence --> Buyer
+  Buyer --> Action

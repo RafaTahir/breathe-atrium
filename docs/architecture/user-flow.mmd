@@ -1,0 +1,22 @@
+flowchart TD
+  Pain["Facility manager feels atrium heat pain"]
+  Request["Audit request"]
+  Baseline["Baseline sensor mapping"]
+  Recommend["Design recommendation"]
+  Pilot["90-day pilot"]
+  Verify["Verification report"]
+  Decision{"Commercial decision"}
+  Retrofit["Full retrofit"]
+  Monitor["Monitoring subscription"]
+  Redesign["Revise scope or stop"]
+
+  Pain --> Request
+  Request --> Baseline
+  Baseline --> Recommend
+  Recommend --> Pilot
+  Pilot --> Verify
+  Verify --> Decision
+  Decision -->|Proceed| Retrofit
+  Decision -->|Not ready| Redesign
+  Retrofit --> Monitor
+  Monitor --> Baseline

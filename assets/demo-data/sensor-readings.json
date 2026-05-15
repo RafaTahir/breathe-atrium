@@ -1,0 +1,44 @@
+{
+  "data_status": "simulated",
+  "note": "Demo-only sensor readings for BreatheAtrium Studio. These are not measured pilot results.",
+  "modes": {
+    "dead_atrium": {
+      "label": "Dead Atrium",
+      "summary": "Baseline heat-trap condition before passive retrofit intervention.",
+      "readings": {
+        "topTemperatureC": 42.6,
+        "occupiedZoneTemperatureC": 34.4,
+        "relativeHumidityPct": 70,
+        "airflowLps": 95,
+        "co2Ppm": 980
+      },
+      "trend": [
+        { "time": "09:00", "topTemperatureC": 35.4, "occupiedZoneTemperatureC": 31.3, "airflowLps": 72 },
+        { "time": "10:00", "topTemperatureC": 38.1, "occupiedZoneTemperatureC": 32.8, "airflowLps": 78 },
+        { "time": "11:00", "topTemperatureC": 40.2, "occupiedZoneTemperatureC": 33.8, "airflowLps": 86 },
+        { "time": "12:00", "topTemperatureC": 42.6, "occupiedZoneTemperatureC": 34.4, "airflowLps": 95 },
+        { "time": "13:00", "topTemperatureC": 43.4, "occupiedZoneTemperatureC": 34.9, "airflowLps": 92 },
+        { "time": "14:00", "topTemperatureC": 43.1, "occupiedZoneTemperatureC": 34.7, "airflowLps": 88 }
+      ]
+    },
+    "breathe_atrium": {
+      "label": "BreatheAtrium Mode",
+      "summary": "Solar-assisted stack ventilation with low intake, cross-flow, high exhaust, and BMS-aware controls.",
+      "readings": {
+        "topTemperatureC": 37.9,
+        "occupiedZoneTemperatureC": 30.9,
+        "relativeHumidityPct": 64,
+        "airflowLps": 260,
+        "co2Ppm": 680
+      },
+      "trend": [
+        { "time": "09:00", "topTemperatureC": 33.4, "occupiedZoneTemperatureC": 29.7, "airflowLps": 182 },
+        { "time": "10:00", "topTemperatureC": 35.6, "occupiedZoneTemperatureC": 30.1, "airflowLps": 214 },
+        { "time": "11:00", "topTemperatureC": 36.8, "occupiedZoneTemperatureC": 30.5, "airflowLps": 238 },
+        { "time": "12:00", "topTemperatureC": 37.9, "occupiedZoneTemperatureC": 30.9, "airflowLps": 260 },
+        { "time": "13:00", "topTemperatureC": 38.6, "occupiedZoneTemperatureC": 31.3, "airflowLps": 266 },
+        { "time": "14:00", "topTemperatureC": 38.2, "occupiedZoneTemperatureC": 31.1, "airflowLps": 254 }
+      ]
+    }
+  }
+}

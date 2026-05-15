@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production builds and generated app output
+dist/
+build/
+.vite/
+.turbo/
+.cache/
+.parcel-cache/
+apps/studio/dist/
+apps/studio/.vite/
+*.wasm
+/wasm/
+!assets/wasm/
+!assets/wasm/**/*.wasm
+
+# Test and coverage output
+coverage/
+playwright-report/
+test-results/
+reports/
+apps/studio/screenshots/
+*.lcov
+
+# Submission and generated packaging artifacts
+submission-package/
+submission-package.zip
+*.zip
+*.tar
+*.tar.gz
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment and secrets
+.env
+.env.*
+*.local
+!.env.example
+!.env.*.example
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# TypeScript and tool caches
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Package manager caches
+.npm/
+.pnpm-store/
+.yarn/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Firmware and embedded tooling output
+firmware/**/build/
+firmware/**/.pio/
+firmware/**/.arduino/
+firmware/**/*.elf
+firmware/**/*.bin
+firmware/**/*.hex
+firmware/**/*.map
+
+# Temporary exports and renders
+tmp/
+temp/
+scratch/
+*.tmp
+*.bak
+
+# Local-only large media exports
+*.mp4
+*.mov
+*.avi
+*.webm

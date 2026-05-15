@@ -1,0 +1,29 @@
+{
+  "name": "breathe-atrium",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Competition submission scaffold for BreatheAtrium, a mixed-mode atrium comfort retrofit using solar-assisted natural ventilation.",
+  "workspaces": [
+    "apps/studio"
+  ],
+  "scripts": {
+    "bootstrap": "npm install",
+    "install:deps": "npm install",
+    "dev": "npm --workspace @breatheatrium/studio run dev",
+    "build": "npm --workspace @breatheatrium/studio run build",
+    "typecheck": "npm --workspace @breatheatrium/studio run typecheck",
+    "test": "npm --workspace @breatheatrium/studio run test",
+    "proposal:pilot": "node scripts/generate-pilot-proposal.js",
+    "proposal:pilot:pdf": "node scripts/generate-pilot-proposal.js --pdf",
+    "qr:demo-hub": "node scripts/generate-demo-hub-qr.js",
+    "package": "node scripts/package-submission.js",
+    "package:dry-run": "node scripts/package-submission.js --dry-run"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
